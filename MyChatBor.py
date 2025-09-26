@@ -24,7 +24,7 @@ chunk_size=300,chunk_overlap=50,length_function=len)
  chunks=splitter.split_text(text)
  #st.write(chunks)
  #creating Object of OpenAIEmbeddings class that let us connect with OpenAI's Embedding
-Models
+ Models
  embeddings=OpenAIEmbeddings(api_key=OpenAI_API_KEY)
  #Creating VectorDB & Storing embeddings into it
  vector_store=FAISS.from_texts(chunks,embeddings)
@@ -47,7 +47,7 @@ Models
  # Approach 2 : Generate Response create_stuff_documents_chain() function
  customized_prompt = ChatPromptTemplate.from_template(
  """ You are my assistant tutor. Answer the question based on the following context and
- if you did not get the context simply say "I don't know Jenny" :
+ if you did not get the context simply say "I don't know" :
  {context}
  Question: {input}
  """
